@@ -27,6 +27,7 @@ una cartella con il gioco in italiano pronta per DOSBox.
   l'indizio degli scacchi, la rivista, il registro dei conti e lo striscione
   della scuola.
 - Ai font del gioco sono state aggiunte le lettere accentate che mancavano.
+- Il manuale.
 
 In più, l'eseguibile del 1996 conteneva una modalità usata dagli sviluppatori
 per leggere i tre dischi da cartelle: la patch la attiva, così **non serve
@@ -54,7 +55,13 @@ dosbox -conf dosbox-harvester-ita.conf
 Aggiungendo `--iso` crea anche le tre immagini dei CD tradotte, per giocare
 con `dosbox-harvester-ita-cd.conf` (si cambia disco con Ctrl+F4).
 
-Nella cartella creata trovi un `LEGGIMI.txt` con i dettagli.
+Nella cartella creata trovi un `LEGGIMI.txt` con i dettagli e il manuale.
+
+## Il manuale
+
+[`manuale/Harvester_manuale_ITA.pdf`](manuale/Harvester_manuale_ITA.pdf) è il libretto
+originale tradotto per intero, con in più un capitolo su come si gioca oggi con DOSBox.
+Il testo è anche in `manuale/testo_it.md`.
 
 ## Contenuto del repository
 
@@ -62,6 +69,7 @@ Nella cartella creata trovi un `LEGGIMI.txt` con i dettagli.
 |---|---|
 | `applica_patch.py` | l'applicatore: solo libreria standard di Python |
 | `dati/` | le differenze binarie fra i file originali e quelli tradotti (`.hdf`), l'elenco con le impronte SHA-1 attese (`manifest.json`), le configurazioni di DOSBox e del gioco |
+| `manuale/` | il manuale del gioco tradotto, in PDF e in testo |
 | `docs/FORMATI.md` | i formati dei file di Harvester e le note sul motore scoperte durante il lavoro |
 | `docs/GLOSSARIO.md` | le scelte di traduzione: registro, nomi, termini fissati |
 | `strumenti/` | gli strumenti usati per estrarre, tradurre, ridisegnare e ricostruire (servono una copia del gioco e i cataloghi di traduzione, che non sono qui perché contengono il testo originale) |
@@ -72,5 +80,6 @@ in `strumenti/bindiff.py`.
 
 ## Licenza
 
-Il codice e i dati della patch sono distribuiti con licenza GNU GPL v3 (vedi
-`LICENSE`). Harvester e tutti i suoi contenuti restano dei rispettivi titolari.
+Il codice, i dati della patch e la traduzione sono distribuiti con licenza GNU
+GPL v3 (vedi `LICENSE`). Harvester, il suo manuale e tutti i loro contenuti
+restano dei rispettivi titolari.

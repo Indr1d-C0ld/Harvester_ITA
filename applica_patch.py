@@ -377,6 +377,9 @@ def main():
     shutil.copyfile(os.path.join(DATI, 'CONFIG.NCD'), os.path.join(inst, 'CONFIG.INI'))
     for nome in ('dosbox-harvester-ita.conf', 'dosbox-harvester-ita-cd.conf', 'LEGGIMI.txt'):
         shutil.copyfile(os.path.join(DATI, nome), os.path.join(dest, nome))
+    manuale = os.path.join(os.path.dirname(DATI), 'manuale', 'Harvester_manuale_ITA.pdf')
+    if os.path.exists(manuale):
+        shutil.copyfile(manuale, os.path.join(dest, 'Harvester_manuale_ITA.pdf'))
 
     # file identici fra i dischi: collegamenti fisici, per risparmiare spazio
     risparmio = 0

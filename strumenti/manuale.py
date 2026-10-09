@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Manuale di Harvester in italiano: manuale/testo_it.md -> build/Harvester_manuale_ITA.pdf
+"""Manuale di Harvester in italiano: manuale/testo_it.md -> manuale/Harvester_manuale_ITA.pdf (copia in build/)
 
 Usa pandoc (Markdown -> HTML) e WeasyPrint (HTML -> PDF) di sistema.
     python3 tools/manuale.py [--html]"""
@@ -227,8 +227,10 @@ def costruisci(solo_html=False):
         print(p_html)
         return
     import weasyprint
-    out = os.path.join(RADICE, 'build', 'Harvester_manuale_ITA.pdf')
+    out = os.path.join(MAN, 'Harvester_manuale_ITA.pdf')
     weasyprint.HTML(p_html).write_pdf(out)
+    import shutil
+    shutil.copyfile(out, os.path.join(RADICE, 'build', 'Harvester_manuale_ITA.pdf'))
     print(out)
 
 
