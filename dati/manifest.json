@@ -1,0 +1,651 @@
+{
+ "formato": 1,
+ "gioco": "Harvester v1.0 (DigiFX Interactive / Merit Studios, 1996), versione inglese su 3 CD",
+ "esclusi": [
+  "16BIT",
+  "32BIT",
+  "VESA",
+  "MAKINGOF.AVI",
+  "SETUP.EXE",
+  "SETUP.CFG",
+  "INSTALL.EXE",
+  "INSTALL.CFG",
+  "ISETUP.EXE",
+  "UNINSTAL.EXE",
+  "README.BAK"
+ ],
+ "installazione": [
+  "HARVEST.EXE",
+  "HARVEST2.DAT",
+  "HARVEST.INI",
+  "HARVEST.ICO",
+  "MENU.INI",
+  "DIALOG.RSP",
+  "README.TXT",
+  "HMIDET.386",
+  "HMIDRV.386",
+  "HMIMDRV.386",
+  "SETSOUND.BAT",
+  "SETSND.ICO",
+  "UNSTALL.EXE",
+  "SETSOUND.EXE",
+  "SETSOUND.INI",
+  "SMIDET.386",
+  "SMIDRV.386",
+  "SMIMDRV.386",
+  "TEST.WAV"
+ ],
+ "in_setsound": [
+  "SETSOUND.EXE",
+  "SETSOUND.INI",
+  "SMIDET.386",
+  "SMIDRV.386",
+  "SMIMDRV.386",
+  "TEST.WAV"
+ ],
+ "dischi": {
+  "1": {
+   "etichetta": "DISK1",
+   "file": {
+    "HARVEST.DAT": "26152d393cd936b302b959dcf8096602f9ae97af",
+    "INDEX.001": "3173a10caf30fbafebe1fadf3cd7becd91fd94a3",
+    "HARVEST.EXE": "1167509dd91a92edd25f5857dc1c6e46be15b975",
+    "HARVEST2.DAT": "c5527bc06b9dd95a733b3d005cc36236b8a08f4a",
+    "HARVEST.INI": "80710cefb3bd3fa34c8761ec71c0abcbe1aab40c",
+    "HARVEST.ICO": "f9e941a6554f17d7715c8fb2f900eaecf2bf0382",
+    "MENU.INI": "f485094479ee260a16a935e3261a92f39c290b9a",
+    "DIALOG.RSP": "0d88f1759ea7dac90644d9d4962d3d13bdfbb23a",
+    "README.TXT": "425559210b1038542df2eb2d219f4b4395afafe0",
+    "HMIDET.386": "27a06eb94b0abf13139c311ebed73358b20bcdab",
+    "HMIDRV.386": "becd7f4a413a1966986b4c41c860b678d7244d58",
+    "HMIMDRV.386": "2a5465355553646586de2368c4cd70d30697247f",
+    "SETSOUND.BAT": "e02655ec19bb5c1fd5919f206a351f969607c326",
+    "SETSND.ICO": "b23344ccb37e4a901089a32235af7ed7a309c244",
+    "UNSTALL.EXE": "9baa6f83b6a494c721603d5e98481434016ab803",
+    "SETSOUND.EXE": "379bf26c28402bfe39e38554978f1e968f1f1600",
+    "SETSOUND.INI": "1c3f7c6c61c329969d897c6c36b21a4d51bf79c7",
+    "SMIDET.386": "c3b75ab63273edfed1bb15acf59b321102781a96",
+    "SMIDRV.386": "32c89e02cae4c33d1c0b93562f4ca0fe86c4a199",
+    "SMIMDRV.386": "f6b1154e9f1e5c3e191c68a971bd66afc1b45290",
+    "TEST.WAV": "5306d9843fabb9b6a0ff4a1932b59d4f68427d01"
+   },
+   "nuovi": {
+    "INDEX.001": "9d29c946cc74a33603b0c08c63cbe2815e83b726",
+    "HARVEST.DAT": "bf60a4cde14f3cb59841503177a7197b73b6531b"
+   }
+  },
+  "2": {
+   "etichetta": "DISK2",
+   "file": {
+    "HARVEST.DAT": "26152d393cd936b302b959dcf8096602f9ae97af",
+    "INDEX.001": "3173a10caf30fbafebe1fadf3cd7becd91fd94a3"
+   },
+   "nuovi": {
+    "INDEX.001": "9d29c946cc74a33603b0c08c63cbe2815e83b726",
+    "HARVEST.DAT": "bf60a4cde14f3cb59841503177a7197b73b6531b"
+   }
+  },
+  "3": {
+   "etichetta": "DISK3",
+   "file": {
+    "HARVEST.DAT": "56edb4ecba859eeb3182007304d04d289daf81af",
+    "INDEX.001": "3eba0d4d6b0b200925925cc5cff174c4dd9fbe1d"
+   },
+   "nuovi": {
+    "INDEX.001": "fc457f66d8953202f446dd040550f41e86a1629b",
+    "HARVEST.DAT": "4d335df3cf13e973a54afee41fb2d34ebda5b3d7"
+   }
+  }
+ },
+ "voci": [
+  {
+   "tipo": "file",
+   "percorso": "ADJHEAD.RCS",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "b62db55ae739a525ddf8d6fe1a4a66241279a6f1",
+   "nuovo": "c3c6093b3fd7637a6e25f096e1bdbcd131ae1fb9",
+   "diff": "dd420aee142777c7.hdf",
+   "dimensione": 1673
+  },
+  {
+   "tipo": "file",
+   "percorso": "DIALOG.RSP",
+   "dischi": [
+    1
+   ],
+   "orig": "0d88f1759ea7dac90644d9d4962d3d13bdfbb23a",
+   "nuovo": "3135d6c93479f1bc1faffdc51fda637d19c94c99",
+   "diff": "63ea02294075af36.hdf",
+   "dimensione": 28323
+  },
+  {
+   "tipo": "file",
+   "percorso": "DIALOG.RSP",
+   "dischi": [
+    3
+   ],
+   "orig": "a06f2f201192c2afceb7ab8cfbf04b8b07986993",
+   "nuovo": "3135d6c93479f1bc1faffdc51fda637d19c94c99",
+   "diff": "19d757d50dbb2d68.hdf",
+   "dimensione": 28323
+  },
+  {
+   "tipo": "file",
+   "percorso": "DIALOGUE.IDX",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "d04f4600f57c2701cecb3aa930be5983ba452b97",
+   "nuovo": "13d8a03f6ed4201d90aa6123f2a42cbc607ea469",
+   "diff": "7969a31accb413d9.hdf",
+   "dimensione": 288353
+  },
+  {
+   "tipo": "file",
+   "percorso": "GRAPHIC/FONT/HARVFNT2.CFT",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "bb1cbeb6edc2574024f4cdaf6910df6ecd2e0830",
+   "nuovo": "ad72964e92b8ba967b2a73fb134bd6d5bd6d9fdb",
+   "diff": "4f2b1003f72700e5.hdf",
+   "dimensione": 90772
+  },
+  {
+   "tipo": "file",
+   "percorso": "GRAPHIC/FONT/HARVFONT.CFT",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "871065278e19259856c9626cd4c665bf89579ca2",
+   "nuovo": "f4fd8aa77b74c6494305fa2b98f766eb19793564",
+   "diff": "db33efef0be30292.hdf",
+   "dimensione": 90772
+  },
+  {
+   "tipo": "file",
+   "percorso": "GRAPHIC/FONT/MEDFONT1.CFT",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "2cf1aad277dd00fb9199429030a70247456e875a",
+   "nuovo": "9187b0d5f7d202e90dd624d6f09eef2d2557c75e",
+   "diff": "965962b3a245584b.hdf",
+   "dimensione": 19738
+  },
+  {
+   "tipo": "file",
+   "percorso": "GRAPHIC/FONT/MEDFONT2.CFT",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "782ca832081b01ab93497660ba4a13ade494ce0b",
+   "nuovo": "13c36e359b7b92be2c14fb48cc0469c5b5c81908",
+   "diff": "f80e0057cad0edc6.hdf",
+   "dimensione": 19738
+  },
+  {
+   "tipo": "file",
+   "percorso": "GRAPHIC/FONT/TEXTFNT2.CFT",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "72a39a3ce0a253f8b33c9ef8629655795baa4f59",
+   "nuovo": "e10bb5d55dd91c3e99b6ade9a746965400be1e85",
+   "diff": "68248e8642accdb1.hdf",
+   "dimensione": 11236
+  },
+  {
+   "tipo": "file",
+   "percorso": "GRAPHIC/FONT/TEXTFONT.CFT",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "c6a782a259dc6ea0728c569ad334a990ba3a1a44",
+   "nuovo": "fbed7019f8c9b13da6cc7448dd13021fdb830f75",
+   "diff": "58a39ae7032183e7.hdf",
+   "dimensione": 11236
+  },
+  {
+   "tipo": "file",
+   "percorso": "GRAPHIC/OTHER/CENSORED.PCX",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "16f99af41d68ff161f1c54d8c58b8934e376ac60",
+   "nuovo": "66bbd95295b93673294b42a381d47dba328d3c4d",
+   "diff": "ffdefdf5cbbe2c45.hdf",
+   "dimensione": 5876
+  },
+  {
+   "tipo": "file",
+   "percorso": "GRAPHIC/OTHER/KEYSHELP.BM",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "366a7b27facdf026780768b2e31f1c12a30a156b",
+   "nuovo": "7c54c407d43f88116efeb3425e33c39c07dd0370",
+   "diff": "6a577d345e56487a.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "file",
+   "percorso": "GRAPHIC/OTHER/MOUSHELP.BM",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "e620502afd4065ea396dfca12a539cdfdf6cab08",
+   "nuovo": "cc9e03bef2bbc3fbb61fd499d11e4cd9873071d6",
+   "diff": "ea36fbddcc61a24d.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "file",
+   "percorso": "HARVEST.EXE",
+   "dischi": [
+    1
+   ],
+   "orig": "1167509dd91a92edd25f5857dc1c6e46be15b975",
+   "nuovo": "616d0967d5eb6b82a191ca8d8119be9a4b0ecc7e",
+   "diff": "66d71570287844f2.hdf",
+   "dimensione": 1173079
+  },
+  {
+   "tipo": "file",
+   "percorso": "HARVEST.SCR",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "1be10da58531b31560dc9df37de4e5771f2a8939",
+   "nuovo": "864166ffb962227b1ef80ea1f35b7569e6a386fd",
+   "diff": "63a137f59c296c45.hdf",
+   "dimensione": 529053
+  },
+  {
+   "tipo": "file",
+   "percorso": "HARVEST.SCR",
+   "dischi": [
+    3
+   ],
+   "orig": "feabe065d3914247e35d2cfe3c1912d9149959b9",
+   "nuovo": "d8297cb5d32dcaaa043338b8a694583baae6c706",
+   "diff": "553d35d201207f06.hdf",
+   "dimensione": 339382
+  },
+  {
+   "tipo": "file",
+   "percorso": "MENU.INI",
+   "dischi": [
+    1
+   ],
+   "orig": "f485094479ee260a16a935e3261a92f39c290b9a",
+   "nuovo": "a95e8050cf49d673c37c86ea01589b8d18544de7",
+   "diff": "1d4193a28fe49936.hdf",
+   "dimensione": 444
+  },
+  {
+   "tipo": "installazione",
+   "percorso": "DIALOG.RSP",
+   "dischi": [
+    1
+   ],
+   "orig": "0d88f1759ea7dac90644d9d4962d3d13bdfbb23a",
+   "nuovo": "3135d6c93479f1bc1faffdc51fda637d19c94c99",
+   "diff": "63ea02294075af36.hdf",
+   "dimensione": 28323
+  },
+  {
+   "tipo": "installazione",
+   "percorso": "HARVEST.EXE",
+   "dischi": [
+    1
+   ],
+   "orig": "1167509dd91a92edd25f5857dc1c6e46be15b975",
+   "nuovo": "616d0967d5eb6b82a191ca8d8119be9a4b0ecc7e",
+   "diff": "66d71570287844f2.hdf",
+   "dimensione": 1173079
+  },
+  {
+   "tipo": "installazione",
+   "percorso": "MENU.INI",
+   "dischi": [
+    1
+   ],
+   "orig": "f485094479ee260a16a935e3261a92f39c290b9a",
+   "nuovo": "a95e8050cf49d673c37c86ea01589b8d18544de7",
+   "diff": "1d4193a28fe49936.hdf",
+   "dimensione": 444
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/OTHER/CD1.BM",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "444040eadebbfe6213c23b2175156bd1fd053189",
+   "nuovo": "d4a500e3bb366f1c03d20135bb869317acaeb349",
+   "diff": "9224276aed15238b.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/OTHER/CD2.BM",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "a5b32fd7194bebd2dd8468cbdc570307784a76db",
+   "nuovo": "d19826ca1de11be4429df57aa977095fd2efe59a",
+   "diff": "89b0989f22f605ef.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/OTHER/CD3.BM",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "e92ae62526ea5cba5905caa24da55ddf7df9878c",
+   "nuovo": "0cd00d00154bd8362d4040cd0e1fa24cee03046c",
+   "diff": "7817ed04208f1f1a.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/OTHER/INVENTRY.BM",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "7b3013ad8d18606a124504fb5e7e5c5aa22b84a2",
+   "nuovo": "531a55b97492dd7f47823c11ebb9e26211e7aa80",
+   "diff": "78d1ee18ca8bd035.hdf",
+   "dimensione": 196620
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/OTHER/KEYWORD.BM",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "a2bb82941e2fdac0984a9d5d49fe56a2423edce9",
+   "nuovo": "d0b9cd44455307f4a147ece4dd586fba3c1a0d74",
+   "diff": "4fb6916730deded5.hdf",
+   "dimensione": 58458
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/OTHER/LOADGAME.BM",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "2688814273f9b0500dc30d521facd154aa852668",
+   "nuovo": "248af08a156ebcd0d801bc2bcf9fecc796afa6ae",
+   "diff": "53032c214e26f60f.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/OTHER/LOADGAME.BM",
+   "dischi": [
+    3
+   ],
+   "orig": "7275397de5dafdb987c43dd1df96128f6513b451",
+   "nuovo": "de775fc9fabfd3376ba1983b83ef80eb840436cf",
+   "diff": "2d67e5ac14714ac3.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/OTHER/SAVEGAME.BM",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "1c2bf27da49d2d4654da4bc9898f304cb06e2266",
+   "nuovo": "e448a55c8d67c5487c22f12d841cab66ce61d659",
+   "diff": "14533106e76c4e78.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/OTHER/TIPS.BM",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "a7f9d7bedf82bc95626fa568dcf21841f7bdbf76",
+   "nuovo": "80632dc0d03c313f2e07caf78cbd1fa93a26954b",
+   "diff": "4e6ab715c1ed93dd.hdf",
+   "dimensione": 30918
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/OTHER/WAIT.ABM",
+   "dischi": [
+    1,
+    2,
+    3
+   ],
+   "orig": "b1b2aa96b2dddbb9ab4c6f2c761a90965ccc82f7",
+   "nuovo": "01f577baaef862ea5c6c553473d88a54e819b8f0",
+   "diff": "ce59dfd65e2d4354.hdf",
+   "dimensione": 133832
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/ROOMS/BAKESALE.BM",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "0ccb5ba6ee8c4d2ee2cba1883713f76d2c329135",
+   "nuovo": "d7c039cf36755f4ac23a85f6f8990db18dfed7b5",
+   "diff": "681f26c54ed1b8ab.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/ROOMS/BOYLCOPY.BM",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "44ffc8094d525f747712ade083be0f8fb2b9074c",
+   "nuovo": "873dd9e4dcc949c970ba7c9865a1df6e140fe171",
+   "diff": "2286dd83cb8ae89c.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/ROOMS/BOYLNOTE.BM",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "2a92527553573e2482ec5dace17299a6ccaea060",
+   "nuovo": "d1b6adc894b0d4073281198f717c7150e870d028",
+   "diff": "9b8fbc940df380d6.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/ROOMS/CLUE.BM",
+   "dischi": [
+    3
+   ],
+   "orig": "6983cd453f97a15a5827cfdd56a1fc0c7041d9e1",
+   "nuovo": "480141b1c187dd992d43ccac85377238e7fda146",
+   "diff": "29e0866a2f5059f1.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/ROOMS/DRTYMAG.BM",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "d85e056532b9d125a34894d5c13b305a417f36fd",
+   "nuovo": "9bc1cc57199d3740969bfebedb936de4b3a24818",
+   "diff": "14a0e90ded0b24e6.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/ROOMS/INVITE.BM",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "0560f1f0f6caa12361f707e4c741ddeb56c67228",
+   "nuovo": "57463f830a39039b0a1c44af1d5f7061e059944c",
+   "diff": "841502a783c1ee2e.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/ROOMS/LODGAPP1.BM",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "122a6c8ddc1f7d854d21164dc4e5fadcaa576792",
+   "nuovo": "396ddb9f2eaeaa39fa44ee97512d04b588e94d73",
+   "diff": "6bbbccfb27b3568b.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/ROOMS/LODGAPP2.BM",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "a714ed9b89c22506b470b6a5daba7a78d1a41fe7",
+   "nuovo": "bbce99b24ea9ce76d1d71480598d82c193c6f895",
+   "diff": "bf2787fb92ad1bd4.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/ROOMS/PERMIT1.BM",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "6ad48338fdb2253673c4c3530bbcbbaf491ff401",
+   "nuovo": "f36b2972a8b27a70391167ec2b19a39c7c9ad514",
+   "diff": "d8fa44e9939135d1.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/ROOMS/PERMIT2.BM",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "a405fce23b2b7890d2adac8724bef4f74ba98302",
+   "nuovo": "fd5a44133705cc4b232ef4d080d0119dd81a20ce",
+   "diff": "c1fdbee55c97d29b.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/ROOMS/REGISTER.BM",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "42d276c055e6f00fc45afa2644a2d6f7ef474a1f",
+   "nuovo": "c8f9f7b3429209ea6e8a6c32b96ea0345f5321bd",
+   "diff": "a9b88ac884d13c26.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/ROOMS/SAFEBOOK.BM",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "5cfed8d448587110486a77d31854eb084c2860d4",
+   "nuovo": "30d676c5f3f1c55924e1146a18c2273646829e36",
+   "diff": "211ab7cae42cf1f8.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/ROOMS/SCHEDULE.BM",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "43555de7ec36c44a6c7cf2dd735461285575871e",
+   "nuovo": "48cb7dd896f78ac55e0edbcde216e1459f0f89d8",
+   "diff": "b50ddf7299ddae48.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/ROOMS/TVDEED1.BM",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "fec452d9692a1f259110c171f54ef0f247959b93",
+   "nuovo": "e3a3a116b2d82bec8e6ef9db6d68d24a2d30542c",
+   "diff": "45df72353a2cccba.hdf",
+   "dimensione": 307212
+  },
+  {
+   "tipo": "membro",
+   "percorso": "GRAPHIC/ROOMS/TVDEED2.BM",
+   "dischi": [
+    1,
+    2
+   ],
+   "orig": "a249e0c44481fde5f53f659f62d20897dfa78d29",
+   "nuovo": "c1a9afcb4a1e494163b49590c998e15af831dde1",
+   "diff": "eab2a7e7ff5c6e30.hdf",
+   "dimensione": 307212
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+HARVESTER (1996) - EDIZIONE ITALIANA
+====================================
+
+Contenuto della cartella
+  HARVEST/                      il gioco in italiano, già installato con il
+                                contenuto dei tre CD (HARVEST/CD1, CD2, CD3)
+  dosbox-harvester-ita.conf     avvio senza CD (consigliato)
+  dosbox-harvester-ita-cd.conf  avvio con le immagini dei tre CD, come nel 1996
+  iso/DISK1-3.iso               le immagini dei CD tradotte (servono solo alla
+                                seconda configurazione)
+  Harvester_manuale_ITA.pdf     il manuale del gioco tradotto
+
+Come si gioca
+  1. Apri un terminale in questa cartella.
+  2. dosbox -conf dosbox-harvester-ita.conf
+  Il gioco passa da un disco all'altro da solo: non c'è niente da cambiare.
+
+  Con dosbox-harvester-ita-cd.conf il gioco chiede i CD come l'originale:
+  premi Ctrl+F4 (anche più volte) finché non compare il disco giusto, poi
+  fai clic. Le due modalità hanno impostazioni separate (HARVEST/CONFIG.NCD
+  e HARVEST/CONFIG.CD), mentre i salvataggi sono in comune.
+
+  Le voci restano in inglese: i SOTTOTITOLI sono in italiano. Tienili accesi
+  (Opzioni > SOTTOTITOLI: SÌ avanza da solo, CLIC avanza con un clic).
+
+Che cosa è tradotto
+  - tutti i sottotitoli dei dialoghi (2.531 battute), le scelte di risposta,
+    gli argomenti di conversazione e quelli da scrivere nel campo "Altro"
+  - le descrizioni degli oggetti, i nomi sotto il cursore, la mappa
+  - menu, opzioni, suggerimenti, salvataggio e caricamento, schermate di aiuto,
+    inventario, richiesta del CD, schermata di attesa, giorni della settimana
+  - i documenti: domanda di ammissione alla Loggia, permesso per la carne,
+    invito della Loggia, atto di proprietà della WHAR, libretto della
+    cassaforte, turni di pattuglia, biglietto di Boyle, indizio degli
+    scacchi, rivista "HarvestBoy", registro dei conti dello sceriffo,
+    striscione della vendita di dolci a scuola
+  - il manuale
+
+Nel campo "Altro" delle conversazioni si scrivono gli argomenti in italiano
+(per esempio "sorella", "loggia", "incendio del giornale"). Per chiudere una
+conversazione si sceglie SALUTA.
+
+I salvataggi stanno in HARVEST/SAVE.* e HARVEST/LOADSAVE.DES.
+
+Nota tecnica sulla modalità senza CD: l'eseguibile del 1996 contiene una
+modalità usata dagli sviluppatori (chiave NETWORK nel CONFIG.INI) che legge i
+tre dischi da cartelle; l'edizione italiana la usa puntandola su
+C:\HARVEST\CD1..CD3 e salta la schermata di cambio disco. Senza quella chiave
+il gioco si comporta esattamente come l'originale.
