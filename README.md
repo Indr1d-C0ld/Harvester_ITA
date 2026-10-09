@@ -18,6 +18,10 @@ una cartella con il gioco in italiano pronta per DOSBox.
   in inglese.
 - Le scelte di risposta e gli argomenti di conversazione, compresi quelli che si
   scrivono a mano nel campo «Altro».
+- I filmati: i loro dialoghi, che nel gioco originale non avevano sottotitoli,
+  ora li hanno. Le battute sono state trascritte dall'audio e compaiono in una
+  fascia sotto l'immagine; l'opzione dei sottotitoli le spegne insieme agli
+  altri.
 - Le descrizioni degli oggetti, i nomi sotto il cursore e la mappa della città.
 - I menu, le opzioni, i suggerimenti, le schermate di salvataggio, caricamento e
   aiuto, l'inventario, la richiesta del CD e la schermata di attesa.

@@ -372,7 +372,7 @@ def main():
             if sha1(dati) != voci_inst[rel]['nuovo']:
                 raise SystemExit(f'ERRORE: patch di {rel} non riuscita')
         open(os.path.join(inst, *rel.split('/')), 'wb').write(dati)
-    for nome in ('CONFIG.NCD', 'CONFIG.CD', 'SOUND.CFG'):
+    for nome in ('CONFIG.NCD', 'CONFIG.CD', 'SOUND.CFG', 'SOTTOTIT.ITA'):
         shutil.copyfile(os.path.join(DATI, nome), os.path.join(inst, nome))
     shutil.copyfile(os.path.join(DATI, 'CONFIG.NCD'), os.path.join(inst, 'CONFIG.INI'))
     for nome in ('dosbox-harvester-ita.conf', 'dosbox-harvester-ita-cd.conf', 'LEGGIMI.txt'):

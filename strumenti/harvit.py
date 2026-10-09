@@ -364,7 +364,16 @@ def costruisci_exe(stat):
             p.sostituisci(int(fo, 16), enc(it))
             stat['exe_stringhe'] += 1
     exe_patch.patch_senza_cd(p)
+    exe_patch.patch_sottotitoli(p)
     return bytes(p.d)
+
+
+def costruisci_sottotitoli(stat, textfont):
+    """SOTTOTIT.ITA dai sottotitoli tradotti di traduzione/filmati.po (vedi tools/filmati.py)."""
+    import cft, filmati, sottotitoli
+    voci = filmati.da_catalogo()
+    stat['sottotitoli_filmati'] = sum(len(v) for v in voci.values())
+    return sottotitoli.costruisci(voci, cft.CFT(textfont))
 
 
 def sostituisci_dat(iso, nome, dati):
@@ -442,10 +451,11 @@ def costruisci(solo_dati=False):
     tips = costruisci_suggerimenti(stat)
     exe = costruisci_exe(stat)
     fonts = {n: costruisci_font(n) for n in os.listdir(os.path.join(CD, 'd1', 'GRAPHIC', 'FONT'))}
+    sott = costruisci_sottotitoli(stat, fonts['TEXTFONT.CFT'])
     dati = os.path.join(BUILD, 'dati')
     os.makedirs(dati, exist_ok=True)
     for nome, b in (('DIALOG.RSP', rsp), ('DIALOGUE.IDX', idx), ('HARVEST1.SCR', scr['d1']), ('HARVEST3.SCR', scr['d3']),
-                    ('MENU.INI', menu), ('ADJHEAD.RCS', tips), ('HARVEST.EXE', exe)):
+                    ('MENU.INI', menu), ('ADJHEAD.RCS', tips), ('HARVEST.EXE', exe), ('SOTTOTIT.ITA', sott)):
         open(os.path.join(dati, nome), 'wb').write(b)
     for n, b in fonts.items():
         open(os.path.join(dati, n), 'wb').write(b)
@@ -457,7 +467,7 @@ def costruisci(solo_dati=False):
     if os.path.exists(inst):
         shutil.rmtree(inst)
     shutil.copytree(os.path.join(RADICE, 'orig', 'HARVEST'), inst, ignore=shutil.ignore_patterns('iso', 'dosbox.conf'))
-    for nome, b in (('HARVEST.EXE', exe), ('DIALOG.RSP', rsp), ('MENU.INI', menu)):
+    for nome, b in (('HARVEST.EXE', exe), ('DIALOG.RSP', rsp), ('MENU.INI', menu), ('SOTTOTIT.ITA', sott)):
         open(os.path.join(inst, nome), 'wb').write(b)
     # immagini dei CD
     grafica, sciolti = grafica_tradotta()

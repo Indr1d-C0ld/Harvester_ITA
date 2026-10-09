@@ -186,3 +186,95 @@ def patch_senza_cd(p):
                 dest = nuove.get(s, 0x48bd8)
                 struct.pack_into('<h', d, r['pos_src'], dest - r['pagina'])
     p.log.append(f'senza CD: {n} percorsi, salto schermata del CD')
+
+
+# ------------------------------------------------------------------ sottotitoli ai filmati
+# Il codice (tools/sottotitoli_fmv.S) va al posto di compress_fst, il compressore
+# dei filmati degli sviluppatori, mai chiamato dal gioco. Le fixup di quel tratto
+# sono riusate per i riferimenti alle globali del codice nuovo (etichette fx_*),
+# le altre scrivono su una parola morta (zavorra).
+ORIGINE_SOTTOTITOLI = 0x12010
+FINE_GROTTA_SOTTOTITOLI = 0x12b00          # inizio di decompress_fst
+GLOBALI_SOTTOTITOLI = {'fx_bl': 0xc7e70, 'fx_td': 0xc7e58, 'fx_tf': 0xd5bc4}   # block_list, text_dialog, textfont
+AGGANCI_SOTTOTITOLI = [
+    # (indirizzo, byte originali, istruzione nuova, simbolo di destinazione)
+    (0x12b06, '81ec48010000', 'jmp', 'inizio'),
+    (0x1311c, '8b42388984 24d4000000', 'call', 'destinazione'),
+    (0x131f8, 'b800000a00', 'call', 'schermo'),
+    (0x13275, '0f856cfdffff', 'jne', 'fotogramma_censurato'),
+    (0x136a2, '0f8d3ff9ffff', 'jge', 'fine_fotogramma'),
+]
+
+
+def assembla_sottotitoli(origine=ORIGINE_SOTTOTITOLI):
+    """Assembla sottotitoli_fmv.S con GNU as/ld: (byte, {simbolo: indirizzo})."""
+    import subprocess, tempfile
+    sorgente = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sottotitoli_fmv.S')
+    with tempfile.TemporaryDirectory() as t:
+        o, elf, binf = (os.path.join(t, n) for n in ('s.o', 's.elf', 's.bin'))
+        subprocess.run(['as', '--32', '-o', o, sorgente], check=True)
+        subprocess.run(['ld', '-m', 'elf_i386', f'-Ttext={origine:#x}', '-e', 'inizio', '-o', elf, o], check=True)
+        subprocess.run(['objcopy', '-O', 'binary', elf, binf], check=True)
+        codice = open(binf, 'rb').read()
+        simboli = {}
+        for r in subprocess.run(['nm', elf], check=True, capture_output=True, text=True).stdout.split('\n'):
+            parti = r.split()
+            if len(parti) == 3 and parti[1] in 'tT':
+                simboli[parti[2]] = int(parti[0], 16)
+    return codice, simboli
+
+
+def patch_sottotitoli(p):
+    d = p.d
+    lin2 = p.le.lin2file
+    codice, sim = assembla_sottotitoli()
+    if ORIGINE_SOTTOTITOLI + len(codice) > FINE_GROTTA_SOTTOTITOLI:
+        raise ValueError(f'codice dei sottotitoli troppo lungo ({len(codice)} byte)')
+    pagina = ORIGINE_SOTTOTITOLI & ~0xfff
+    if (FINE_GROTTA_SOTTOTITOLI - 1) & ~0xfff != pagina:
+        raise ValueError('la grotta dei sottotitoli deve stare in una sola pagina')
+    # agganci: controlla i byte originali e che nessuna fixup li tocchi
+    for a, orig, _, _ in AGGANCI_SOTTOTITOLI:
+        b = bytes.fromhex(orig.replace(' ', ''))
+        fo = lin2(a)
+        if bytes(d[fo:fo + len(b)]) != b:
+            raise ValueError(f'byte inattesi a {a:#x}: {bytes(d[fo:fo + len(b)]).hex()}')
+        for r in p.recs:
+            if any(a - 3 <= s < a + len(b) for s in r['sorgenti']):
+                raise ValueError(f'fixup sull\'aggancio {a:#x}')
+    # fixup del tratto sostituito
+    tratto = [r for r in p.recs if any(ORIGINE_SOTTOTITOLI - 3 <= s < FINE_GROTTA_SOTTOTITOLI for s in r['sorgenti'])]
+    for r in tratto:
+        if r['pos_src'] is None or r['pagina'] != pagina or r['sorgenti'][0] < ORIGINE_SOTTOTITOLI:
+            raise ValueError(f'fixup inattesa nella grotta dei sottotitoli: {r["sorgenti"]}')
+    servono = sorted((n, sim[n] - 4) for n in sim if n.startswith('fx_'))
+    libere = [r for r in tratto if r['w_off'] == 4 and r['tobj'] == 3]
+    if len(libere) < len(servono):
+        raise ValueError('fixup riusabili insufficienti')
+    usate = set()
+    for (nome, pos), r in zip(servono, libere):
+        dest = next(v for k, v in GLOBALI_SOTTOTITOLI.items() if nome.startswith(k))
+        struct.pack_into('<I', d, r['pos_off'], dest - p.le.objs[2]['base'])
+        struct.pack_into('<h', d, r['pos_src'], pos - r['pagina'])
+        r['toff'] = dest - p.le.objs[2]['base']
+        r['sorgenti'] = [pos]
+        usate.add(id(r))
+    for r in tratto:
+        if id(r) not in usate:
+            struct.pack_into('<h', d, r['pos_src'], sim['zavorra'] - r['pagina'])
+            r['sorgenti'] = [sim['zavorra']]
+    # codice, poi riempitivo fino a decompress_fst
+    fo = lin2(ORIGINE_SOTTOTITOLI)
+    d[fo:fo + len(codice)] = codice
+    resto = FINE_GROTTA_SOTTOTITOLI - ORIGINE_SOTTOTITOLI - len(codice)
+    d[fo + len(codice):fo + len(codice) + resto] = b'\xcc' * resto
+    for a, orig, istr, dest in AGGANCI_SOTTOTITOLI:
+        n = len(bytes.fromhex(orig.replace(' ', '')))
+        if istr in ('jge', 'jne'):
+            nuovo = (b'\x0f\x8d' if istr == 'jge' else b'\x0f\x85') + _rel32(a + 6, sim[dest])
+        else:
+            nuovo = (b'\xe9' if istr == 'jmp' else b'\xe8') + _rel32(a + 5, sim[dest])
+        nuovo += b'\x90' * (n - len(nuovo))
+        d[lin2(a):lin2(a) + n] = nuovo
+    p.log.append(f'sottotitoli dei filmati: {len(codice)} byte di codice, {len(servono)} fixup riusate, '
+                 f'{len(tratto) - len(servono)} neutralizzate')

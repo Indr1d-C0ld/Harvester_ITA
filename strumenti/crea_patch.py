@@ -104,7 +104,7 @@ def main():
     # file nostri: configurazioni e istruzioni
     for f in os.listdir(os.path.join(RADICE, 'pacchetto')):
         shutil.copyfile(os.path.join(RADICE, 'pacchetto', f), os.path.join(DATI, f))
-    for f in ('CONFIG.NCD', 'CONFIG.CD', 'SOUND.CFG'):
+    for f in ('CONFIG.NCD', 'CONFIG.CD', 'SOUND.CFG', 'SOTTOTIT.ITA'):
         shutil.copyfile(os.path.join(BUILD, f), os.path.join(DATI, f))
     json.dump(manifest, open(os.path.join(DATI, 'manifest.json'), 'w'), indent=1, ensure_ascii=False)
     tot = sum(os.path.getsize(os.path.join(DATI, f)) for f in os.listdir(DATI))

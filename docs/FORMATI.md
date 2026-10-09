@@ -69,6 +69,35 @@ che si aggiungono allungando la striscia.
   128 byte, posizione e dimensione due volte); ogni file nell'archivio è
   preceduto da una copia del suo record.
 
+## Filmati (`.FST`)
+
+Formato FutureVision, intestazione di 32 byte: `2TSF`, larghezza, altezza, un
+valore fisso (`0x43800`), numero di fotogrammi, fotogrammi al secondo (15),
+frequenza audio (22050), bit per campione (16, in due filmati 8). Segue una
+tabella di 6 byte per fotogramma (u32 byte del video, u16 byte dell'audio),
+poi i fotogrammi, ciascuno col video seguito dall'audio PCM non compresso.
+
+Il video è un rinfresco a blocchi 4×4: u16 `n` (bit della mappa), la mappa
+(`n/8 + 1` byte, letti dal bit più significativo), i dati. Il primo bit dice
+se segue una tavolozza (768 byte, valori 0-63); poi per ogni blocco un bit:
+0 = invariato, 1 = cambiato, e il bit seguente sceglie fra blocco a due colori
+(colore 0, colore 1, maschera u16 col bit 15 sul pixel in alto a sinistra) e
+blocco grezzo (16 byte). Il gioco decodifica solo `h/4 − 1` file di blocchi:
+le ultime quattro righe dello schermo non vengono mai disegnate e nei dati
+sono spesso incoerenti. `strumenti/fst.py` legge e decodifica.
+
+I filmati a 320×200 vanno in modo 13h, scritti direttamente in memoria video
+(`decompress_fst`, chiamata solo da `play_fvi`); quelli a 640×480 (i titoli di
+coda e uno senza audio) in VESA. Quasi tutti sono un'immagine di 256×160 con
+bordi neri. Con `GORE=NO` i tratti elencati in `fst_censor` (25 voci: nome e
+intervalli di fotogrammi) sono sostituiti da `GRAPHIC\OTHER\CENSORED.PCX`.
+
+L'eseguibile contiene anche il compressore degli sviluppatori
+(`compress_fst`, `fst_encode`, `fst_decode`), mai chiamato dal gioco, e le
+informazioni di debug Watcom con il nome e l'indirizzo di ogni funzione e
+variabile globale (in coda al file, record `offset u32, segmento u16,
+modulo u16, tipo u8, lunghezza u8, nome`).
+
 ## Eseguibile
 
 - Le stringhe dell'interfaccia (verbi del cursore, giorni, nomi degli slot di
@@ -85,6 +114,21 @@ che si aggiungono allungando la striscia.
   all'inizio della funzione, nello spazio del vecchio controllo, e le fixup
   sono spostate in place. All'avvio il gioco vuole comunque un lettore CD
   (MSCDEX), anche vuoto.
+- **Sottotitoli dei filmati** (aggiunta dell'edizione italiana). Il codice
+  (`strumenti/sottotitoli_fmv.S`) sta al posto di `compress_fst`, il
+  compressore dei filmati degli sviluppatori che il gioco non chiama mai, e
+  si aggancia a `decompress_fst` in cinque punti. Se il filmato è in
+  `SOTTOTIT.ITA` (cartella del gioco), l'opzione TEXT non è NO e il filmato
+  è a 320×200, il decodificatore scrive in un buffer invece che in memoria
+  video. A ogni fotogramma il buffer va sullo schermo spostato in su di 16
+  righe, e nelle 32 righe liberate in basso si disegna il sottotitolo col
+  font dei testi del gioco, bianco con contorno nero (indici scelti nella
+  tavolozza corrente del filmato). Nei tratti censurati resta solo la fascia
+  sotto il cartello. Lo stato sta in un blocco allocato una volta, il cui
+  indirizzo occupa la globale `block_list` (usata solo da `compress_fst`);
+  le fixup del codice sostituito sono riusate per i riferimenti alle globali.
+  `SOTTOTIT.ITA` contiene, per ogni filmato, gli intervalli di fotogrammi e le
+  righe già impaginate (posizione e testo): lo scrive `strumenti/sottotitoli.py`.
 - **Trucchi degli sviluppatori**: tabella dei codici di scansione a `0xc3cb0`.
   I codici sono NICK, MURDERER, SON OF SAM, BOSTON STRANGLER, HELTER
   SKELTER, CHARLES MANSON, BRUCE e DUSTIN. DUSTIN esegue il comando di

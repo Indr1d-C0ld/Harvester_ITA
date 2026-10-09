@@ -26,6 +26,9 @@ Come si gioca
 Che cosa è tradotto
   - tutti i sottotitoli dei dialoghi (2.531 battute), le scelte di risposta,
     gli argomenti di conversazione e quelli da scrivere nel campo "Altro"
+  - i filmati: i loro dialoghi, che nel gioco originale non avevano
+    sottotitoli, ora li hanno, in una fascia sotto l'immagine (seguono la
+    stessa opzione SOTTOTITOLI dei dialoghi)
   - le descrizioni degli oggetti, i nomi sotto il cursore, la mappa
   - menu, opzioni, suggerimenti, salvataggio e caricamento, schermate di aiuto,
     inventario, richiesta del CD, schermata di attesa, giorni della settimana

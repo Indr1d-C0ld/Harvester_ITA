@@ -201,7 +201,12 @@ def censura(disco='d1'):
         for soglia, val in ((0.75, 75), (0.5, 154), (0.3, 132), (0.12, 73)):
             sel = (al >= soglia) & (a == 0)
             a[sel] = val
-    return raw[:128] + pcx_rle(a)
+    # La tavolozza in coda (0x0C + 768 byte) serve: il gioco carica il file sciolto
+    # del CD, che ce l'ha, mentre la copia in HARVEST.DAT da cui partiamo no.
+    sciolto = open(os.path.join(RADICE, 'cd', disco, 'GRAPHIC', 'OTHER', 'CENSORED.PCX'), 'rb').read()
+    if sciolto[-769] != 0x0C:
+        raise ValueError('CENSORED.PCX del CD senza tavolozza in coda')
+    return raw[:128] + pcx_rle(a) + sciolto[-769:]
 
 
 def genera_tutto(out):

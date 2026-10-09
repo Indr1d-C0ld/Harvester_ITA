@@ -28,6 +28,8 @@ Se preferisci giocare come nel 1996, con i tre dischi, usa invece `dosbox-harves
 
 Le voci degli attori sono rimaste quelle originali, in inglese. Tutto quello che si legge è in italiano: i sottotitoli dei dialoghi (tienili attivi: menu *OPZIONI*, voce *SOTTOTITOLI*), le risposte e gli argomenti di conversazione, le descrizioni degli oggetti, i nomi che compaiono sotto il cursore, la mappa, i menu, le schermate di aiuto, l'inventario e i documenti che troverai nel corso del gioco.
 
+Anche i filmati hanno i sottotitoli, che nel gioco originale non c'erano: compaiono in una fascia sotto l'immagine e seguono la stessa opzione dei dialoghi. Le battute dei filmati sono state trascritte ascoltando l'audio.
+
 ## GLI ARGOMENTI DI CONVERSAZIONE
 
 Durante un dialogo compare l'elenco degli argomenti di cui puoi parlare. Il pulsante *Altro* ti permette di scriverne uno a mano: scrivilo in italiano, per esempio «Loggia», «sorella» o «incendio del giornale». Per chiudere una conversazione scegli *SALUTA*.
